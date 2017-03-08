@@ -1,0 +1,20 @@
+pt_BR:
+  activerecord:
+    models:
+      user:
+        one: Usuário
+        other: Usuários
+    attributes:
+      user:
+        id: '#'
+        email: E-mail
+        city_id: Cidade
+        category_id: Categoria
+        kind: Tipo
+        name: Nome
+        password: Senha
+        password_confirmation: "Confirmar senha"
+        current_password: "Senha atual"
+        status: Status
+        created_at: Criado em
+        updated_at: Atualizado em
