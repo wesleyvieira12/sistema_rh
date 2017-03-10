@@ -407,6 +407,12 @@
                                         <i class="fa fa-home fa-fw"></i> Sobre
                                         <% end %>
                                     <% end %>
+
+                                    <% if policy(:user).linkMessage? %>
+                                        <%= link_to mensagems_path do%>
+                                        <i class="fa fa-home fa-fw"></i> Mensagens
+                                        <% end %>
+                                    <% end %>
                                 
                             </li>                         
                             

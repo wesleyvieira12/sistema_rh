@@ -1,37 +1,57 @@
-<%= form_for(mensagem) do |f| %>
-  <% if mensagem.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(mensagem.errors.count, "error") %> prohibited this mensagem from being saved:</h2>
+<%= form_for @mensagem, :html => { :class => "form-horizontal mensagem" } do |f| %>
 
-      <ul>
-      <% mensagem.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+  <% if @mensagem.errors.any? %>
+    <div id="error_expl" class="panel panel-danger">
+      <div class="panel-heading">
+        <h3 class="panel-title"><%= pluralize(@mensagem.errors.count, "error") %> prohibited this mensagem from being saved:</h3>
+      </div>
+      <div class="panel-body">
+        <ul>
+        <% @mensagem.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+      </div>
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :description %>
-    <%= f.text_area :description %>
+  <div class="form-group">
+    <%= f.label :description, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :description, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:description) %>
   </div>
 
-  <div class="field">
-    <%= f.label :name %>
-    <%= f.text_field :name %>
+  <div class="form-group">
+    <%= f.label :name, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :name, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:name) %>
   </div>
 
-  <div class="field">
-    <%= f.label :endereco %>
-    <%= f.text_field :endereco %>
+  <div class="form-group">
+    <%= f.label :telefone, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :telefone, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:telefone) %>
   </div>
 
-  <div class="field">
-    <%= f.label :telefone %>
-    <%= f.text_field :telefone %>
+  <div class="form-group">
+    <%= f.label :endereco, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :endereco, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:endereco) %>
   </div>
 
-  <div class="actions">
-    <%= f.submit %>
+  <div class="form-group">
+    <div class="col-lg-offset-2 col-lg-10">
+      <%= f.submit "Cadastrar", :class => 'btn btn-primary' %>
+      
+    </div>
   </div>
+
 <% end %>

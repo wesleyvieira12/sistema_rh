@@ -1,33 +1,48 @@
-<p id="notice"><%= notice %></p>
-
-<h1>Mensagems</h1>
-
-<table>
+<%- model_class = Mensagem -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.singularize.titleize %></h1>
+</div>
+<table class="table table-striped">
   <thead>
     <tr>
-      <th>Description</th>
-      <th>Name</th>
-      <th>Endereco</th>
-      <th>Telefone</th>
-      <th colspan="3"></th>
+      <th><%= model_class.human_attribute_name(:id) %></th>
+      <th><%= model_class.human_attribute_name(:description) %></th>
+      <th><%= model_class.human_attribute_name(:name) %></th>
+      <th><%= model_class.human_attribute_name(:endereco) %></th>
+      <th><%= model_class.human_attribute_name(:telefone) %></th>
+      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
-
   <tbody>
     <% @mensagems.each do |mensagem| %>
       <tr>
+        <td><%= link_to mensagem.id, mensagem_path(mensagem) %></td>
         <td><%= mensagem.description %></td>
         <td><%= mensagem.name %></td>
         <td><%= mensagem.endereco %></td>
         <td><%= mensagem.telefone %></td>
-        <td><%= link_to 'Show', mensagem %></td>
-        <td><%= link_to 'Edit', edit_mensagem_path(mensagem) %></td>
-        <td><%= link_to 'Destroy', mensagem, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%=l mensagem.created_at %></td>
+        <td>
+          <%= link_to t('.show', :default => t("helpers.links.show")),
+                      mensagem_path(mensagem), :class => 'btn btn-default btn-xs' %>
+          <% if policy(:user).editMessage? %>
+            <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                        edit_mensagem_path(mensagem), :class => 'btn btn-default btn-xs' %>
+          <% end %>
+          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                      mensagem_path(mensagem),
+                      :method => :delete,
+                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                      :class => 'btn btn-xs btn-danger' %>
+        </td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
-<br>
-
-<%= link_to 'New Mensagem', new_mensagem_path %>
+<% if policy(:user).createMessage? %>
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_mensagem_path,
+            :class => 'btn btn-primary' %>
+<% end %>

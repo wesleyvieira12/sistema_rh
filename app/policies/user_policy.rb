@@ -12,6 +12,10 @@ class UserPolicy
     @user.kind=="administrador"
   end
 
+  def linkMessage?
+    @user.kind=="administrador"
+  end
+
   def linkEmpresas?
   	@user.kind=="administrador"
   end
@@ -27,6 +31,14 @@ class UserPolicy
   def createContact?
     c = Contato.all
     c.size==0
+  end
+
+  def createMessage?
+    false
+  end
+
+  def editMessage?
+    false
   end
   
 end

@@ -13,6 +13,9 @@ pt_BR:
       psicologa:
         one: Psicologa
         other: Psicologas
+      mensagem:
+        one: Mensagem
+        other: Mensagens
       user:
         one: Usuário
         other: Usuários

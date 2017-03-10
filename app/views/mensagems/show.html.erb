@@ -1,24 +1,18 @@
-<p id="notice"><%= notice %></p>
+<%- model_class = Mensagem -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.titleize %></h1>
+</div>
 
-<p>
-  <strong>Description:</strong>
-  <%= @mensagem.description %>
-</p>
+<dl class="dl-horizontal">
+  <dt><strong><%= model_class.human_attribute_name(:description) %>:</strong></dt>
+  <dd><%= @mensagem.description %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:name) %>:</strong></dt>
+  <dd><%= @mensagem.name %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:endereco) %>:</strong></dt>
+  <dd><%= @mensagem.endereco %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:telefone) %>:</strong></dt>
+  <dd><%= @mensagem.telefone %></dd>
+</dl>
 
-<p>
-  <strong>Name:</strong>
-  <%= @mensagem.name %>
-</p>
-
-<p>
-  <strong>Endereco:</strong>
-  <%= @mensagem.endereco %>
-</p>
-
-<p>
-  <strong>Telefone:</strong>
-  <%= @mensagem.telefone %>
-</p>
-
-<%= link_to 'Edit', edit_mensagem_path(@mensagem) %> |
-<%= link_to 'Back', mensagems_path %>
+<%= link_to t('.back', :default => t("helpers.links.back")),
+              mensagems_path, :class => 'btn btn-default'  %>

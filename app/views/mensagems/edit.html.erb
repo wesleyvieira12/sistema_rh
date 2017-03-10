@@ -1,6 +1,6 @@
-<h1>Editing Mensagem</h1>
 
-<%= render 'form', mensagem: @mensagem %>
-
-<%= link_to 'Show', @mensagem %> |
-<%= link_to 'Back', mensagems_path %>
+<%- model_class = Mensagem -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => [:'helpers.titles.edit', 'Edit %{model}'], :model => model_class.model_name.human.titleize %></h1>
+</div>
+<%= render :partial => 'form' %>
