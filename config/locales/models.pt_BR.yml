@@ -7,6 +7,9 @@ pt_BR:
       empresa:
         one: Empresa
         other: Empresas
+      contato:
+        one: Contato
+        other: Contatos
       psicologa:
         one: Psicologa
         other: Psicologas

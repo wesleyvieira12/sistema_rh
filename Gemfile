@@ -11,6 +11,7 @@ gem 'bootstrap_sb_admin_base_v2'
 gem "therubyracer"
 gem "twitter-bootstrap-rails"
 gem 'devise'
+gem 'carrierwave', '~> 1.0'
 gem "pundit"
 gem 'ransack'
 gem 'autoprefixer-rails','~> 6.4'
