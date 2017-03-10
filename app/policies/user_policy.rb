@@ -20,7 +20,7 @@ class UserPolicy
   	@user.kind=="administrador"
   end
 
-  def linkContatos?
+  def linkSobres?
     @user.kind=="administrador"
   end
 

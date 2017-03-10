@@ -8,8 +8,8 @@ pt_BR:
         one: Empresa
         other: Empresas
       contato:
-        one: Contato
-        other: Contatos
+        one: Sobre
+        other: Sobres
       psicologa:
         one: Psicologa
         other: Psicologas
