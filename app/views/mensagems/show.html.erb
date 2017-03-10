@@ -12,6 +12,8 @@
   <dd><%= @mensagem.endereco %></dd>
   <dt><strong><%= model_class.human_attribute_name(:telefone) %>:</strong></dt>
   <dd><%= @mensagem.telefone %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:email) %>:</strong></dt>
+  <dd><%= @mensagem.email %></dd>
 </dl>
 
 <%= link_to t('.back', :default => t("helpers.links.back")),
