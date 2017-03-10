@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  resources :empresas
+  resources :psicologas
+  resources :clients
+  devise_for :users
   get 'painel/index'
 
   root to: 'home#index'

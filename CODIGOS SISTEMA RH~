@@ -1,0 +1,73 @@
+###################################################################
+################# Criando os models (6) ###############################
+###################################################################
+STATUS -> ativo , inativo
+KIND -> cliente(0), empresa(1), psicologa(2), administrador(3)
+-------------------------------------------------------------------
+rails g scaffold User status:integer  
+
+rails g model 
+
+rails g scaffold Service description:string user_client:references user_professional:references status:integer 
+
+rails g scaffold Comment description:text service:references status:integer 
+
+rails g scaffold City name:string state:references status:integer
+
+rails g scaffold State name:string status:integer 
+
+rake db:migrate
+
+rails g bootstrap:themed [Model no plural]
+
+class User < ApplicationRecord
+  enum kind: [:client, :professional, :administrator]
+  enum status: [:active, :inactive]
+  belongs_to :city
+  belongs_to :category
+  has_many :services
+end
+
+class Service < ApplicationRecord
+  enum status: [:active, :inactive]
+  has_many :comments
+  belongs_to :user_client, class_name: 'User', :foreign_key => 'user_client_id'
+  belongs_to :user_professional, class_name: 'User', :foreign_key => 'user_professional_id'
+end
+
+class Comment < ApplicationRecord
+  enum status: [:active, :inactive]
+  belongs_to :service
+end
+
+class City < ApplicationRecord
+  enum status: [:active, :inactive]
+  belongs_to :state
+  has_many :users
+end
+
+class State < ApplicationRecord
+  enum status: [:active, :inactive]
+  has_many :cities
+end
+
+class Category < ApplicationRecord
+  enum status: [:active, :inactive]
+  has_many :users
+end
+
+
+------------------------------------------------------------
+LINK DAS GENS UTILIZADAS
+------------------------------------------------------------
+
+Bootstrap para criar estilizar os scaffolds
+
+https://github.com/seyhunak/twitter-bootstrap-rails#i18n-internationalization-support
+
+Bootstrap SB Admin 2
+
+https://github.com/dreamingechoes/bootstrap_sb_admin_base_v2
+
+
+------------------------------------------------------------

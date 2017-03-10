@@ -64,6 +64,12 @@
                     <li class="hidden">
                         <a href="#page-top"></a>
                     </li>
+                    <% if user_signed_in? %>
+                    <li><%= link_to "Minha conta", painel_index_path%></li>
+                    <% else %>
+                    <li><%= link_to "Entrar",  user_session_path%></li>
+                    <li><%= link_to "Cadastrar-se", new_user_registration_path%></li>
+                    <% end %>
                     <li>
                         <a class="page-scroll" href="#services">Services</a>
                     </li>
@@ -71,13 +77,13 @@
                         <a class="page-scroll" href="#portfolio">Portfolio</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#about">About</a>
+                        <a class="page-scroll" href="#about">Sobre</a>
                     </li>
                     <li>
                         <a class="page-scroll" href="#team">Team</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#contact">Contact</a>
+                        <a class="page-scroll" href="#contact">Contato</a>
                     </li>
                 </ul>
             </div>
@@ -91,7 +97,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-4">
-                    <span class="copyright">Copyright &copy; Your Website 2016</span>
+                    <span class="copyright">Copyright &copy; I9SoluçõesWeb</span>
                 </div>
                 <div class="col-md-4">
                     <ul class="list-inline social-buttons">
@@ -132,7 +138,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <%= link_to "Sistema de RH", painel_path,class: "navbar-brand"%>
+                    <%= link_to "Sistema de RH", painel_index_path,class: "navbar-brand"%>
                     
                 </div>
                 
@@ -323,7 +329,7 @@
                     <!--USUARIO-->
                     <li class="dropdown">
                         <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                            <i class="fa fa-user fa-fw"></i><%= current_user.name%> <i class="fa fa-caret-down"></i>
+                            <i class="fa fa-user fa-fw"></i><%= current_user.email%> <i class="fa fa-caret-down"></i>
                         </a>
                         <ul class="dropdown-menu dropdown-user">
                             <li><%= link_to edit_user_registration_path do%><i class="fa fa-user fa-fw"></i> Meus dados <% end %>
@@ -342,6 +348,31 @@
                     
                 </ul>
                 <!--FIM DO MENU DO TOPO-->
+                <% if current_user.kind != "administrador" and current_user.empresa.nil? and current_user.client.nil? and current_user.psicologa.nil?%>
+                <!--MENU LATERAL-->
+                <div class="navbar-default sidebar" role="navigation">
+                    <div class="sidebar-nav navbar-collapse">
+                        <ul class="nav" id="side-menu">
+                        </ul>
+                    </div>
+                </div>
+                </nav>
+                <div id="page-wrapper">
+                <div class="row">
+                <br>
+                <h2>Você deve primeiro cadastrar alguns dados nesseçarios para continuar.</h2>
+                <hr>
+                
+                <% if current_user.kind == "cliente"%>
+                    <%= render 'clients/form', client: @client %>
+                <% elsif current_user.kind == "empresa"%>
+                    <%= render 'empresas/form', empresa: @empresa %>                    
+                <% else %>
+                    <%= render 'psicologas/form', psicologa: @psicologa %>
+                <% end %>
+                </div>
+                </div>
+                <% else %>
 
                 <!--MENU LATERAL-->
                 <div class="navbar-default sidebar" role="navigation">
@@ -349,7 +380,7 @@
                         <ul class="nav" id="side-menu">
                             <li>
                                 
-                                    <%= link_to painel_path do%>
+                                    <%= link_to painel_index_path do%>
                                     <i class="fa fa-home fa-fw"></i> Início
                                     <% end %>
                                 
@@ -381,7 +412,7 @@
                     <%= yield %>
                 </div>
             </div>
-
+            <% end %>
         </div> 
 
     <% else  %>

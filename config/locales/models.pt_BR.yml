@@ -1,20 +1,43 @@
 pt_BR:
   activerecord:
     models:
+      client:
+        one: Cliente
+        other: Clientes
+      empresa:
+        one: Empresa
+        other: Empresas
+      psicologa:
+        one: Psicologa
+        other: Psicologas
       user:
         one: Usuário
         other: Usuários
     attributes:
+      client:
+        id: '#'
+        name: Nome
+        cpf: CPF
+        created_at: Criado em
+        updated_at: Atualizado em
+      empresa:
+        id: '#'
+        name: Nome da empresa
+        agent: Representante
+        cnpj: CNPJ
+        created_at: Criado em
+        updated_at: Atualizado em
+      psicologa:
+        id: '#'
+        name: Nome
+        n_orgao: Nº do orgão
+        created_at: Criado em
+        updated_at: Atualizado em
       user:
         id: '#'
         email: E-mail
-        city_id: Cidade
-        category_id: Categoria
-        kind: Tipo
-        name: Nome
         password: Senha
         password_confirmation: "Confirmar senha"
         current_password: "Senha atual"
-        status: Status
         created_at: Criado em
         updated_at: Atualizado em
