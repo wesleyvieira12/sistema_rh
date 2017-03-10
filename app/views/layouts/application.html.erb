@@ -401,6 +401,12 @@
                                         <i class="fa fa-home fa-fw"></i> Psicólogas
                                         <% end %>
                                     <% end %>
+
+                                    <% if policy(:user).linkContatos? %>
+                                        <%= link_to contatos_path do%>
+                                        <i class="fa fa-home fa-fw"></i> Contato
+                                        <% end %>
+                                    <% end %>
                                 
                             </li>                         
                             

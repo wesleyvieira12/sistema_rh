@@ -19,5 +19,14 @@ class UserPolicy
   def linkPsicologas?
   	@user.kind=="administrador"
   end
+
+  def linkContatos?
+    @user.kind=="administrador"
+  end
+
+  def createContact?
+    c = Contato.all
+    c.size==0
+  end
   
 end
