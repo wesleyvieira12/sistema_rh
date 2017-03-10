@@ -383,7 +383,24 @@
                                     <%= link_to painel_index_path do%>
                                     <i class="fa fa-home fa-fw"></i> Início
                                     <% end %>
-                                
+
+                                    <% if policy(:user).linkClients? %>
+                                        <%= link_to clients_path do%>
+                                        <i class="fa fa-home fa-fw"></i> Clientes
+                                        <% end %>
+                                    <% end %>
+
+                                    <% if policy(:user).linkEmpresas? %>
+                                        <%= link_to empresas_path do%>
+                                        <i class="fa fa-home fa-fw"></i> Empresas
+                                        <% end %>
+                                    <% end %>
+
+                                    <% if policy(:user).linkPsicologas? %>
+                                        <%= link_to psicologas_path do%>
+                                        <i class="fa fa-home fa-fw"></i> Psicólogas
+                                        <% end %>
+                                    <% end %>
                                 
                             </li>                         
                             
