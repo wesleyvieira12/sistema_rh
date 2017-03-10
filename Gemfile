@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+ruby "2.3.3"
+
 git_source(:github) do |repo_name|
   repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
   "https://github.com/#{repo_name}.git"
@@ -55,6 +57,10 @@ gem 'jbuilder', '~> 2.5'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
+end
+
+group :production do
+  gem 'rails_12factor', group: :production
 end
 
 group :development do
