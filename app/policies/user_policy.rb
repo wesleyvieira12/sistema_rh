@@ -33,6 +33,18 @@ class UserPolicy
     c.size==0
   end
 
+  def createEmpresa?
+    false
+  end
+
+  def createPsicologa?
+    false
+  end
+
+  def createCliente?
+    false
+  end
+
   def createMessage?
     false
   end

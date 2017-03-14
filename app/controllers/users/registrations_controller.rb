@@ -1,7 +1,7 @@
 class Users::RegistrationsController < Devise::RegistrationsController
 
   before_action :authenticate_user!
-  before_action :set_user, only: [:show, :edit, :update, :destroy, :new, :create]
+  before_action :set_user, only: [:show, :edit, :update, :destroy]
 
   # before_action :configure_sign_up_params, only: [:create]
   before_action :configure_account_update_params, only: [:update]
@@ -18,8 +18,8 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
     respond_to do |format|
       if @user.save
-        format.html { redirect_to new_user_registration_path, notice: 'Usuario criado, espere a ativação do seu cadastro.' }
-        format.json { render :show, status: :created, location: new_user_registration_path }
+        format.html { redirect_to new_user_session_path, notice: 'Usuario criado. Entre na plataforma. ' }
+        format.json { render :show, status: :created, location: new_user_session_path }
       else
         format.html { render :new }
         format.json { render json: edit_user_registration_path, status: :unprocessable_entity }
@@ -51,7 +51,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   end
 
   def user_params
-      params.permit(:curriculum, :email, :password, :current_password)
+      params.require(:user).permit(:email, :password, :password_confirmation, :kind)
   end
 
   # DELETE /resource

@@ -6,9 +6,6 @@ class UsersController < ApplicationController
   # GET /users
   # GET /users.json
   def index
-
-    
-
   end
 
   # GET /users/1
@@ -17,8 +14,6 @@ class UsersController < ApplicationController
   end
 
   def change
-
-
 
   end
 

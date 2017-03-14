@@ -39,6 +39,8 @@
   </tbody>
 </table>
 
-<%= link_to t('.new', :default => t("helpers.links.new")),
+<% if policy(:user).createEmpresa? %>
+  <%= link_to t('.new', :default => t("helpers.links.new")),
             new_empresa_path,
             :class => 'btn btn-primary' %>
+<% end %>
