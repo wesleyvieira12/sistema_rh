@@ -13,6 +13,11 @@
  
 </dl>
 
-<%= link_to t('.back', :default => t("helpers.links.back")),
-              empresas_path, :class => 'btn btn-default'  %>
+<% if current_user.kind=="Administrador" %>
+	<%= link_to t('.back', :default => t("helpers.links.back")),
+	              empresas_path, :class => 'btn btn-default'  %>
 
+<% else %>
+	<%= link_to t('.back', :default => t("helpers.links.back")),
+	              painel_index_path, :class => 'btn btn-default'  %>
+<% end %>

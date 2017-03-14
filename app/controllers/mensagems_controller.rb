@@ -4,7 +4,8 @@ class MensagemsController < ApplicationController
   # GET /mensagems
   # GET /mensagems.json
   def index
-    @mensagems = Mensagem.all
+    @q = Mensagem.ransack(params[:q])
+    @mensagems = @q.result(distinct: true)
   end
 
   # GET /mensagems/1

@@ -13,6 +13,7 @@ gem 'bootstrap_sb_admin_base_v2'
 gem "therubyracer"
 gem "twitter-bootstrap-rails"
 gem 'devise'
+gem 'ransack'
 gem 'carrierwave', '~> 1.0'
 gem "pundit"
 gem 'ransack'

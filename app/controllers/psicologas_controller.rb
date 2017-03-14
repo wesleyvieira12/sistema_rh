@@ -4,7 +4,8 @@ class PsicologasController < ApplicationController
   # GET /psicologas
   # GET /psicologas.json
   def index
-    @psicologas = Psicologa.all
+    @q = Psicologa.ransack(params[:q])
+    @psicologas = @q.result(distinct: true)
   end
 
   # GET /psicologas/1

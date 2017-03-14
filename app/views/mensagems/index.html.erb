@@ -2,6 +2,17 @@
 <div class="page-header">
   <h1><%=t '.title', :default => model_class.model_name.human.singularize.titleize %></h1>
 </div>
+
+<%= search_form_for @q do |f| %>
+
+  <%= f.search_field :email_cont, :placeholder => "Nome" %>
+
+  <%= f.submit "Procurar" %>
+  
+<% end %>
+
+<br>
+
 <table class="table table-striped">
   <thead>
     <tr>
