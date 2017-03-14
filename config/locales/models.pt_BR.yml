@@ -10,12 +10,12 @@ pt_BR:
       contato:
         one: Sobre
         other: Sobres
-      psicologa:
-        one: Psicologa
-        other: Psicologas
       mensagem:
         one: Mensagem
         other: Mensagens
+      psicologa:
+        one: Psicóloga
+        other: Psicólogas
       user:
         one: Usuário
         other: Usuários
@@ -47,3 +47,15 @@ pt_BR:
         current_password: "Senha atual"
         created_at: Criado em
         updated_at: Atualizado em
+      mensagem:
+        id: '#'
+        name: Nome
+        password: Senha
+        description: Descrição
+        email: E-mail
+        created_at: Criado em
+        updated_at: Atualizado em
+      contato:
+        id: '#'
+        description: Descrição
+        created_at: Criado em
