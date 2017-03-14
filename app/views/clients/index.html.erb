@@ -18,6 +18,7 @@
     <tr>
       <th><%= model_class.human_attribute_name(:id) %></th>
       <th><%= model_class.human_attribute_name(:name) %></th>
+      <th><%= model_class.human_attribute_name(:email) %></th>
       <th><%= model_class.human_attribute_name(:cpf) %></th>
       <th><%= model_class.human_attribute_name(:user_id) %></th>
       <th><%= model_class.human_attribute_name(:created_at) %></th>
@@ -29,6 +30,8 @@
       <tr>
         <td><%= link_to client.id, client_path(client) %></td>
         <td><%= client.name %></td>
+        <% user_client = User.find_by_id(client.user_id) %>
+        <td><%= user_client.email %></td>
         <td><%= client.cpf %></td>
         <td><%= client.user_id %></td>
         <td><%=l client.created_at %></td>

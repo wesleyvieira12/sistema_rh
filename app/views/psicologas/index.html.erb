@@ -18,6 +18,7 @@
     <tr>
       <th><%= model_class.human_attribute_name(:id) %></th>
       <th><%= model_class.human_attribute_name(:name) %></th>
+      <th><%= model_class.human_attribute_name(:email) %></th>
       <th><%= model_class.human_attribute_name(:n_orgao) %></th>
       <th><%= model_class.human_attribute_name(:user_id) %></th>
       <th><%= model_class.human_attribute_name(:created_at) %></th>
@@ -29,6 +30,8 @@
       <tr>
         <td><%= link_to psicologa.id, psicologa_path(psicologa) %></td>
         <td><%= psicologa.name %></td>
+        <% user_psicologa = User.find_by_id(psicologa.user_id) %>
+        <td><%= user_psicologa.email %></td>
         <td><%= psicologa.n_orgao %></td>
         <td><%= psicologa.user_id %></td>
         <td><%=l psicologa.created_at %></td>

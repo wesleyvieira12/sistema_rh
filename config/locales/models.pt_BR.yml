@@ -23,12 +23,14 @@ pt_BR:
       client:
         id: '#'
         name: Nome
+        email: E-mail
         cpf: CPF
         created_at: Criado em
         updated_at: Atualizado em
       empresa:
         id: '#'
         name: Nome da empresa
+        email: E-mail
         agent: Representante
         cnpj: CNPJ
         created_at: Criado em
@@ -36,6 +38,7 @@ pt_BR:
       psicologa:
         id: '#'
         name: Nome
+        email: E-mail
         n_orgao: Nº do orgão
         created_at: Criado em
         updated_at: Atualizado em

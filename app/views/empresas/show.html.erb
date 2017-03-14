@@ -6,6 +6,9 @@
 <dl class="dl-horizontal">
   <dt><strong><%= model_class.human_attribute_name(:name) %>:</strong></dt>
   <dd><%= @empresa.name %></dd>
+  <% user_empresa = User.find_by_id(@empresa.user_id) %>
+  <dt><strong><%= model_class.human_attribute_name(:email) %>:</strong></dt>
+  <dd><%= user_empresa.email %></dd>
   <dt><strong><%= model_class.human_attribute_name(:agent) %>:</strong></dt>
   <dd><%= @empresa.agent %></dd>
   <dt><strong><%= model_class.human_attribute_name(:cnpj) %>:</strong></dt>

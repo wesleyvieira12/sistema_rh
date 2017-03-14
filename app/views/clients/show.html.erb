@@ -6,6 +6,9 @@
 <dl class="dl-horizontal">
   <dt><strong><%= model_class.human_attribute_name(:name) %>:</strong></dt>
   <dd><%= @client.name %></dd>
+  <% user_client = User.find_by_id(@client.user_id) %>
+  <dt><strong><%= model_class.human_attribute_name(:email) %>:</strong></dt>
+  <dd><%= user_client.email %></dd>
   <dt><strong><%= model_class.human_attribute_name(:cpf) %>:</strong></dt>
   <dd><%= @client.cpf %></dd>
   
