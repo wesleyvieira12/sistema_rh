@@ -52,5 +52,17 @@ class UserPolicy
   def editMessage?
     false
   end
+
+  def editCliente?
+    false
+  end
+
+  def editPsicologa?
+    false
+  end
+
+  def editEmpresa?
+    false
+  end  
   
 end

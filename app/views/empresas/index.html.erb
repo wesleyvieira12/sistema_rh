@@ -37,8 +37,10 @@
         <td>
           <%= link_to t('.show', :default => t("helpers.links.show")),
                       empresa_path(empresa), :class => 'btn btn-default btn-xs' %>
-          <%= link_to t('.edit', :default => t("helpers.links.edit")),
+          <% if policy(:user).editEmpresa? %>
+            <%= link_to t('.edit', :default => t("helpers.links.edit")),
                       edit_empresa_path(empresa), :class => 'btn btn-default btn-xs' %>
+          <% end %>
           <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
                       empresa_path(empresa),
                       :method => :delete,
