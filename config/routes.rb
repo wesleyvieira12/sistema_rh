@@ -5,7 +5,12 @@ Rails.application.routes.draw do
   resources :empresas
   resources :psicologas
   resources :clients
-  devise_for :users
+  resources :users
+
+  devise_for :users, controllers: {
+    registrations: 'users/registrations'
+  },:path => 'u'
+
   get 'painel/index'
 
   root to: 'home#index'

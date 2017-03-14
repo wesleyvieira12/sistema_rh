@@ -1,5 +1,9 @@
 class User < ApplicationRecord
   
+  require 'carrierwave/orm/activerecord'
+
+  mount_uploader :curriculum, CurriculumUploader
+
   has_one :client
   has_one :psicologa
   has_one :empresa
