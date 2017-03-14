@@ -341,7 +341,16 @@
                         </ul>
                         
                     </li>
+
                     <!-- FIM DO USUARIO -->
+                    
+                    <% if current_user.kind=="cliente" and current_user.curriculum!=nil %>
+                            <li>
+                                <% curriculo = (current_user.curriculum).to_s %>
+                                <%= link_to "Meu Currículo", "#{curriculo}" %>
+                            </li>
+                    <% end %>
+
                     <li>
                         <%= link_to "Voltar",root_path%>
                     </li>

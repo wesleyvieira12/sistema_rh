@@ -8,13 +8,16 @@ class UsersController < ApplicationController
   def index
   end
 
+  def curriculum
+    current_user.curriculum
+  end
+
   # GET /users/1
   # GET /users/1.json
   def show
   end
 
   def change
-
   end
 
   # GET /users/new
