@@ -13,10 +13,9 @@
  
 </dl>
 
-<% if current_user.kind=="Administrador" %>
+<% if current_user.kind=="administrador" %>
 	<%= link_to t('.back', :default => t("helpers.links.back")),
 	              empresas_path, :class => 'btn btn-default'  %>
-
 <% else %>
 	<%= link_to t('.back', :default => t("helpers.links.back")),
 	              painel_index_path, :class => 'btn btn-default'  %>

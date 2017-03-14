@@ -11,7 +11,7 @@
   
 </dl>
 
-<% if current_user.kind=="Administrador" %>
+<% if current_user.kind=="administrador" %>
 <%= link_to t('.back', :default => t("helpers.links.back")),
               clients_path, :class => 'btn btn-default'  %>
 <% else %>
