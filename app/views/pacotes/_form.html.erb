@@ -16,6 +16,14 @@
   <% end %>
 
   <div class="form-group">
+    <%= f.label :description, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :description, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:description) %>
+  </div>
+
+  <div class="form-group">
     <%= f.label :tipo_pacote_id, :class => 'control-label col-lg-2' %>
     <div class="col-lg-10">
       <%= f.collection_select(:tipo_pacote_id, TipoPacote.all, :id, :numeroEntrevistas, {}, class: 'form-control') %>

@@ -4,7 +4,8 @@ class PacotesController < ApplicationController
   # GET /pacotes
   # GET /pacotes.json
   def index
-    @pacotes = Pacote.all
+    @pacotes = Pacote.where(empresa_id: current_user.id)
+    @pacotes_admin = Pacote.all
   end
 
   # GET /pacotes/1
@@ -24,7 +25,10 @@ class PacotesController < ApplicationController
   # POST /pacotes
   # POST /pacotes.json
   def create
+    
     @pacote = Pacote.new(pacote_params)
+
+    @pacote.empresa_id = current_user.id
 
     respond_to do |format|
       if @pacote.save
@@ -69,6 +73,6 @@ class PacotesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def pacote_params
-      params.require(:pacote).permit(:tipo_pacote_id)
+      params.require(:pacote).permit(:tipo_pacote_id, :description)
     end
 end

@@ -6,8 +6,10 @@
 <dl class="dl-horizontal">
   <dt><strong><%= model_class.human_attribute_name(:id) %>:</strong></dt>
   <dd><%= @pacote.id %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:description) %>:</strong></dt>
+  <dd><%= @pacote.description %></dd>
   <dt><strong><%= model_class.human_attribute_name(:tipo_pacote) %>:</strong></dt>
-  <dd><%= @pacote.tipo_pacote_id %></dd>
+  <dd><%= @pacote.tipo_pacote.name %></dd>
   <dt><strong><%= model_class.human_attribute_name(:created_at) %>:</strong></dt>
   <dd><%= @pacote.created_at %></dd>
 </dl>

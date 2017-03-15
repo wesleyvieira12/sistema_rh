@@ -8,15 +8,28 @@
   <thead>
     <tr>
       <th><%= model_class.human_attribute_name(:id) %></th>
+      <th><%= model_class.human_attribute_name(:description) %></th>
       <th><%= model_class.human_attribute_name(:tipo_pacote_id) %></th>
       <th><%= model_class.human_attribute_name(:created_at) %></th>
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
   <tbody>
-    <% @pacotes.each do |pacote| %>
+
+    <% if current_user.kind=="administrador" %>
+
+      <% @pacotes_temp = @pacotes_admin %>
+
+    <% else %>
+
+      <% @pacotes_temp = @pacotes %>
+
+    <% end %>
+
+    <% @pacotes_temp.each do |pacote| %>
       <tr>
         <td><%= link_to pacote.id, pacote_path(pacote) %></td>
+        <td><%= pacote.description %></td>
         <td><%= pacote.tipo_pacote_id %></td>
         <td><%=l pacote.created_at %></td>
         <td>

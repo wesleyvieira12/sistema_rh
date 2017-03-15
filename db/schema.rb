@@ -10,7 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170315112753) do
+ActiveRecord::Schema.define(version: 20170315115030) do
+
+  create_table "add_empresa_id_to_pacotes", force: :cascade do |t|
+    t.integer  "empresa_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "clients", force: :cascade do |t|
     t.string   "name"
@@ -52,6 +58,8 @@ ActiveRecord::Schema.define(version: 20170315112753) do
     t.integer  "tipo_pacote_id"
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
+    t.string   "description"
+    t.integer  "empresa_id"
     t.index ["tipo_pacote_id"], name: "index_pacotes_on_tipo_pacote_id"
   end
 

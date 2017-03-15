@@ -69,5 +69,6 @@ pt_BR:
         created_at: Criado em
       pacote:
         id: '#'
+        description: Descrição
         tipo_pacote: Tipo de Pacote
         created_at: Criado em

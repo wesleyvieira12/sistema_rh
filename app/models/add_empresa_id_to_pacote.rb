@@ -1,0 +1,2 @@
+class AddEmpresaIdToPacote < ApplicationRecord
+end

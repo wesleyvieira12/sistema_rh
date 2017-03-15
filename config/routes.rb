@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :add_empresa_id_to_pacotes
   resources :pacotes
   resources :tipo_pacotes
   resources :mensagems

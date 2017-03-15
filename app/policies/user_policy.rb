@@ -42,7 +42,7 @@ class UserPolicy
   end
 
   def createPacote?
-    @user.kind=="administrador" or @user.kind=="empresa"
+    @user.kind=="empresa"
   end
 
   def createEmpresa?
@@ -86,7 +86,7 @@ class UserPolicy
   end
 
   def editPacote?
-    @user.kind=="administrador" or @user.kind=="empresa"
+    @user.kind=="empresa"
   end
   
 end
