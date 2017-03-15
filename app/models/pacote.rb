@@ -1,6 +1,6 @@
 class Pacote < ApplicationRecord
   belongs_to :tipo_pacote
-  has_many :clientepacotes, :class_name => "Clientepacote"
+  has_many :clientepacotes, :class_name => "Clientepacote", dependent: :destroy
 
   accepts_nested_attributes_for :clientepacotes, reject_if: :all_blank, :allow_destroy => true
 end

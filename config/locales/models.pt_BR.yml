@@ -72,3 +72,4 @@ pt_BR:
         description: Descrição
         tipo_pacote: Tipo de Pacote
         created_at: Criado em
+        client: Cliente

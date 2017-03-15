@@ -2,8 +2,8 @@
 <li class="control-group nested-fields">
 
   <div class="controls">
-    <%= f.label :client_id %><br>
-    <%= f.text_field :client_id %>
+    <%= f.label "Cliente" %><br>
+    <%= f.collection_select(:client_id, Client.all, :id, :cpf, {}, class: 'form-control') %>
   </div>
 
   <div class="controls">
