@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :psicologapacotes
   resources :clientepacotes
   resources :cliente_pacotes
   resources :add_empresa_id_to_pacotes

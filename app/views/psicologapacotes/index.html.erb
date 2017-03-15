@@ -1,0 +1,32 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Psicologapacotes</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Psicologa Name</th>
+      <th>Pacote ID</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @psicologapacotes.each do |psicologapacote| %>
+      <tr>
+        <td><%= psicologapacote.id %></td>
+        <td><%= psicologapacote.psicologa.name %></td>
+        <td><%= psicologapacote.pacote_id %></td>
+        <td><%= link_to 'Show', psicologapacote %></td>
+        <td><%= link_to 'Edit', edit_psicologapacote_path(psicologapacote) %></td>
+        <td><%= link_to 'Destroy', psicologapacote, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Psicologapacote', new_psicologapacote_path %>
+

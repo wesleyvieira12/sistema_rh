@@ -1,0 +1,22 @@
+<%= form_for(psicologapacote) do |f| %>
+  <% if psicologapacote.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(psicologapacote.errors.count, "error") %> prohibited this psicologapacote from being saved:</h2>
+
+      <ul>
+      <% psicologapacote.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :psicologa_id %>
+    <%= f.text_field :psicologa_id %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

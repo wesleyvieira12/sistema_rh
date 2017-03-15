@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170315130240) do
+ActiveRecord::Schema.define(version: 20170315143753) do
 
   create_table "clientepacotes", force: :cascade do |t|
     t.integer  "client_id"
@@ -64,6 +64,15 @@ ActiveRecord::Schema.define(version: 20170315130240) do
     t.string   "description"
     t.integer  "empresa_id"
     t.index ["tipo_pacote_id"], name: "index_pacotes_on_tipo_pacote_id"
+  end
+
+  create_table "psicologapacotes", force: :cascade do |t|
+    t.integer  "psicologa_id"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.integer  "pacote_id"
+    t.index ["pacote_id"], name: "index_psicologapacotes_on_pacote_id"
+    t.index ["psicologa_id"], name: "index_psicologapacotes_on_psicologa_id"
   end
 
   create_table "psicologas", force: :cascade do |t|

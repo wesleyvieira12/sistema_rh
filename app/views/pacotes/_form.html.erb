@@ -33,7 +33,7 @@
 
   <div class="form-group">
 
-    <%= link_to_add_association('Adicionar Cliente', f, :clientepacotes, 'data-association-insertion-node' => "#list-clientepacote ol", 'data-association-insertion-method' => "append", :class => 'btn btn-primary') %>
+    <%= link_to_add_association('Adicionar Candidato', f, :clientepacotes, 'data-association-insertion-node' => "#list-clientepacote ol", 'data-association-insertion-method' => "append", :class => 'btn btn-primary') %>
 
     <fieldset id="list-clientepacote">
 
@@ -42,6 +42,26 @@
         <%= f.fields_for :clientepacotes do |clientepacote| %>
 
           <%= render partial: "clientepacote_fields", locals: {f: clientepacote} %>
+
+        <% end %>
+
+      </ol>
+
+    </fieldset>
+
+  </div>
+
+  <div class="form-group">
+
+    <%= link_to_add_association('Adicionar Psicólogo', f, :psicologapacotes, 'data-association-insertion-node' => "#list-psicologapacote ol", 'data-association-insertion-method' => "append", :class => 'btn btn-primary') %>
+
+    <fieldset id="list-psicologapacote">
+
+      <ol>
+
+        <%= f.fields_for :psicologapacotes do |psicologapacote| %>
+
+          <%= render partial: "psicologapacote_fields", locals: {f: psicologapacote} %>
 
         <% end %>
 

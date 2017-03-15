@@ -1,9 +1,10 @@
 
+
 <li class="control-group nested-fields">
 
   <div class="controls">
     <%= f.label "Candidato" %><br>
-    <%= f.collection_select(:client_id, Client.all, :id, :cpf, {}, class: 'form-control') %>
+    <%= f.collection_select(:psicologa_id, Psicologa.all, :id, :n_orgao, {}, class: 'form-control') %>
   </div>
 
   <div class="controls">
