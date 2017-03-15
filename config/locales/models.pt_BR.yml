@@ -62,3 +62,8 @@ pt_BR:
         id: '#'
         description: Descrição
         created_at: Criado em
+      tipo_pacote:
+        id: '#'
+        name: Nome
+        numeroEntrevistas: Número de Entrevistas
+        created_at: Criado em

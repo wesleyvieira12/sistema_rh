@@ -1,0 +1,2 @@
+class TipoPacote < ApplicationRecord
+end

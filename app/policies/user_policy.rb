@@ -12,6 +12,10 @@ class UserPolicy
     @user.kind=="administrador"
   end
 
+  def linkTipo?
+    @user.kind=="administrador"
+  end
+
   def linkMessage?
     @user.kind=="administrador"
   end
@@ -49,6 +53,10 @@ class UserPolicy
     false
   end
 
+  def createTipo?
+    @user.kind=="administrador"
+  end
+
   def editMessage?
     false
   end
@@ -64,5 +72,9 @@ class UserPolicy
   def editEmpresa?
     false
   end  
+
+  def editTipo?
+    @user.kind=="administrador"
+  end
   
 end
