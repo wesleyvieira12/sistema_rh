@@ -405,6 +405,12 @@
                                         <% end %>
                                     <% end %>
 
+                                    <% if policy(:user).linkPacote? %>
+                                        <%= link_to pacotes_path do%>
+                                        <i class="fa fa-building-o"></i> Pacotes
+                                        <% end %>
+                                    <% end %>
+
                                     <% if policy(:user).linkEmpresas? %>
                                         <%= link_to empresas_path do%>
                                         <i class="fa fa-building-o"></i> Empresas

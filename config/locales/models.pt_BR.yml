@@ -67,3 +67,7 @@ pt_BR:
         name: Nome
         numeroEntrevistas: Número de Entrevistas
         created_at: Criado em
+      pacote:
+        id: '#'
+        tipo_pacote: Tipo de Pacote
+        created_at: Criado em

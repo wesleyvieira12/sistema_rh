@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :pacotes
   resources :tipo_pacotes
   resources :mensagems
   resources :contatos
