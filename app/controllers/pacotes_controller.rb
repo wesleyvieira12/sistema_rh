@@ -73,6 +73,6 @@ class PacotesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def pacote_params
-      params.require(:pacote).permit(:tipo_pacote_id, :description)
+      params.require(:pacote).permit(:tipo_pacote_id, :description, :clientepacotes_attributes => [:id, :client_id, :pacote_id, :_destroy])
     end
 end

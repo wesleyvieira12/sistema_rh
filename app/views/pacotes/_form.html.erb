@@ -32,6 +32,26 @@
   </div>
 
   <div class="form-group">
+
+    <%= link_to_add_association('Adicionar Cliente', f, :clientepacotes, 'data-association-insertion-node' => "#list-clientepacote ol", 'data-association-insertion-method' => "append", :class => 'btn btn-primary') %>
+
+    <fieldset id="list-clientepacote">
+
+      <ol>
+
+        <%= f.fields_for :clientepacotes do |clientepacote| %>
+
+          <%= render partial: "clientepacote_fields", locals: {f: clientepacote} %>
+
+        <% end %>
+
+      </ol>
+
+    </fieldset>
+
+  </div>
+
+  <div class="form-group">
     <div class="col-lg-offset-2 col-lg-10">
       <%= f.submit "Cadastrar", :class => 'btn btn-primary' %>
       
