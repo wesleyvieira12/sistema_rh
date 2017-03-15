@@ -390,42 +390,42 @@
                             <li>
                                 
                                     <%= link_to painel_index_path do%>
-                                    <i class="glyphicon glyphicon-home"></i> Início
+                                    <i class="fa fa-line-chart"></i> Início
                                     <% end %>
 
                                     <% if policy(:user).linkTipo? %>
                                         <%= link_to tipo_pacotes_path do%>
-                                        <i class="glyphicon glyphicon-envelope"></i> Tipos de Pacote
+                                        <i class="fa fa-envelope-square"></i> Tipos de Pacote
                                         <% end %>
                                     <% end %>
 
                                     <% if policy(:user).linkClients? %>
                                         <%= link_to clients_path do%>
-                                        <i class="glyphicon glyphicon-user"></i> Clientes
+                                        <i class="fa fa-users"></i> Clientes
                                         <% end %>
                                     <% end %>
 
                                     <% if policy(:user).linkPacote? %>
                                         <%= link_to pacotes_path do%>
-                                        <i class="fa fa-building-o"></i> Pacotes
+                                        <i class="fa fa-id-card"></i> Pacotes
                                         <% end %>
                                     <% end %>
 
                                     <% if policy(:user).linkEmpresas? %>
                                         <%= link_to empresas_path do%>
-                                        <i class="fa fa-building-o"></i> Empresas
+                                        <i class="fa fa-building"></i> Empresas
                                         <% end %>
                                     <% end %>
 
                                     <% if policy(:user).linkPsicologas? %>
                                         <%= link_to psicologas_path do%>
-                                        <i class="glyphicon glyphicon-user"></i> Psicólogas
+                                        <i class="fa fa-graduation-cap"></i> Psicólogos
                                         <% end %>
                                     <% end %>
 
                                     <% if policy(:user).linkSobres? %>
                                         <%= link_to contatos_path do%>
-                                        <i class="glyphicon glyphicon-pencil"></i> Sobre
+                                        <i class="fa fa-pencil"></i> Sobre
                                         <% end %>
                                     <% end %>
 
