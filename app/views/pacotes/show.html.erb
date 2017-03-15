@@ -10,6 +10,11 @@
   <dd><%= @pacote.description %></dd>
   <dt><strong><%= model_class.human_attribute_name(:tipo_pacote) %>:</strong></dt>
   <dd><%= @pacote.tipo_pacote.name %></dd>
+  <% if current_user.kind=="administrador" %>
+    <% empresa = User.find_by_id(@pacote.empresa_id) %>
+    <dt><strong><%= model_class.human_attribute_name(:empresa) %>:</strong></dt>
+    <dd><%= empresa.email %></dd>
+  <% end %>
   <dt><strong><%= model_class.human_attribute_name(:created_at) %>:</strong></dt>
   <dd><%= @pacote.created_at %></dd>
 </dl>

@@ -30,7 +30,7 @@
       <tr>
         <td><%= link_to pacote.id, pacote_path(pacote) %></td>
         <td><%= pacote.description %></td>
-        <td><%= pacote.tipo_pacote_id %></td>
+        <td><%= pacote.tipo_pacote.name %></td>
         <td><%=l pacote.created_at %></td>
         <td>
           <%= link_to t('.show', :default => t("helpers.links.show")),
