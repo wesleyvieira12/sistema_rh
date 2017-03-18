@@ -20,7 +20,7 @@ gem 'ransack'
 gem 'autoprefixer-rails','~> 6.4'
 gem "pundit"
 gem 'ransack'
-gem "cocoon"
+gem 'cocoon', '~> 1.2', '>= 1.2.9'
 gem 'will_paginate-bootstrap'
 gem "rmagick"
 gem 'carrierwave', '~> 1.0'
