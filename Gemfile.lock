@@ -225,7 +225,7 @@ DEPENDENCIES
   bootstrap_sb_admin_base_v2
   byebug
   carrierwave (~> 1.0)
-  cocoon (~> 1.2)
+  cocoon (~> 1.2, >= 1.2.9)
   coffee-rails (~> 4.2)
   devise
   jbuilder (~> 2.5)
