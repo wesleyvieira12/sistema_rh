@@ -3,6 +3,7 @@
 //
 //= require action_cable
 //= require_self
+//= require cocoon
 //= require_tree ./channels
 
 (function() {

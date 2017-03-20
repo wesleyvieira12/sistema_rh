@@ -14,6 +14,7 @@
 //= require jquery_ujs
 //= require bootstrap.min
 //= require agency
+//= require cocoon
 //= require contact_me
 //= require jqBootstrapValidation
 //= require_tree .
