@@ -48,7 +48,7 @@
 <body id="page-top" class="index">
 
     <!-- Navigation -->
-    <nav id="mainNav" class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <nav class="navbar navbar-custom navbar-fixed-top">
         <div class="container">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header page-scroll">
@@ -67,20 +67,12 @@
                     <% if user_signed_in? %>
                     <li><%= link_to "Minha conta", painel_index_path%></li>
                     <% else %>
-                    <li><%= link_to "Entrar",  user_session_path%></li>
+                    <li><%= link_to "Acesse sua área",  user_session_path%></li>
                     <li><%= link_to "Cadastrar-se", new_user_registration_path%></li>
                     <% end %>
+                    
                     <li>
-                        <a class="page-scroll" href="#services">Serviços</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="#portfolio">Portfolio</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="#about">Sobre</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="#team">Time</a>
+                        <a class="page-scroll" href="#about">Quem somos</a>
                     </li>
                     <li>
                         <a class="page-scroll" href="#contact">Contato</a>
